@@ -2,8 +2,9 @@
 require_once 'models/Conversation.php';
 require_once 'models/ConversationRepository.php';
 
-class ChatController {
-    public function index() {
+class ConversationController {
+
+    public function listConversations() {
         $repository = new ConversationRepository(Database::getConnection());
         $conversations = $repository->getAllConversations();
 
