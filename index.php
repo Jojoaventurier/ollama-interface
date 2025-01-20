@@ -15,7 +15,7 @@ unset($_SESSION['errors']);
 require_once 'database.php';
 require_once 'controllers/HomeController.php';
 require_once 'controllers/ModelController.php';
-require_once 'controllers/ChatController.php';
+require_once 'controllers/ConversationController.php';
 
 $page = $_GET['page'] ?? 'home';
 switch ($page) {
