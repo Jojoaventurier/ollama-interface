@@ -33,7 +33,7 @@ class ModelController {
     public function listModels() {
         try {
             $models = $this->fetchLocalModels();
-            $remoteModels = $this->fetchRemoteModels();
+            //$remoteModels = $this->fetchRemoteModels();
             require 'views/models/list.php';
         } catch (Exception $e) {
             error_log('Error in listModels: ' . $e->getMessage());
