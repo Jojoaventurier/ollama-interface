@@ -3,7 +3,7 @@
 <h1>Local Models</h1>
 <ul>
     <?php foreach ($models as $model): ?>
-        <li><?= htmlspecialchars($model) ?></li>
+        <li><?= $model ?></li>
     <?php endforeach; ?>
 </ul>
 
@@ -11,7 +11,7 @@
 <ul>
 <?php foreach ($remoteModels as $model): ?>
     <li>
-        <?= htmlspecialchars($model['name']) ?> (Size: <?= round($model['diskSize'] / (1024 ** 3), 2) ?> GB)
+        <?= $model['name'] ?> (Size: <?= round($model['diskSize'] / (1024 ** 3), 2) ?> GB)
         <?php if ($model['diskSize'] >= ModelController::VERY_LARGE_SIZE): ?>
             <span class="alert alert-danger">Very Large Model (Over 20GB)</span>
         <?php elseif ($model['diskSize'] >= ModelController::WARNING_SIZE): ?>

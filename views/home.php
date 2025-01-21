@@ -16,7 +16,7 @@
         <?php if (!empty($errors)): ?>
             <div class="error-messages">
                 <?php foreach ($errors as $error): ?>
-                    <div class="error"><?= htmlspecialchars($error) ?></div>
+                    <div class="error"><?= $error ?></div>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
@@ -25,7 +25,7 @@
         <?php if (!empty($models)): ?>
             <ul>
                 <?php foreach ($models as $model): ?>
-                    <li><?= htmlspecialchars($model) ?></li>
+                    <li><?= $model ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php else: ?>

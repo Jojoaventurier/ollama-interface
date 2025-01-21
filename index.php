@@ -1,16 +1,13 @@
 <?php
 session_start();
 
-// Centralized error handler
-function addError($message) {
-    $_SESSION['errors'][] = $message;
-    header('Location: ' . $_SERVER['HTTP_REFERER']); // Redirect back to the previous page
+if (!empty($_SERVER['HTTP_REFERER'])) {
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
+} else {
+    echo 'An error occurred. Unable to redirect.';
     exit();
 }
-
-// Retrieve and clear errors for display
-$errors = $_SESSION['errors'] ?? [];
-unset($_SESSION['errors']);
 
 require_once 'database.php';
 require_once 'controllers/HomeController.php';
