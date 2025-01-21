@@ -6,7 +6,7 @@ class ModelController {
     const VERY_LARGE_SIZE = 20 * 1024 * 1024 * 1024; // 20 GB
 
     private function fetchLocalModels() {
-        $output = shell_exec('ollama list 2>&1');
+        $output = shell_exec('ollama list'); //ollama list 2>&1'
         if ($output === null) {
             throw new Exception('Failed to execute "ollama list". Ensure the command is installed and accessible.');
         }
